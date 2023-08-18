@@ -21,9 +21,9 @@ function calculateDiscount(){
   const rent = getInputValueById('rent');
   const clothes = getInputValueById('clothes');
   const totalExpenses = food + rent + clothes;
-  const savingAmount = totalExpenses - (totalExpenses * (discount / 100));
-  const balanceTotal = income + savingAmount;
-  const remainingBalance = balanceTotal - savingAmount;
+  const savingAmount = (totalExpenses * (discount / 100));
+  const balanceTotal = income - totalExpenses;
+  const remainingBalance = balanceTotal + savingAmount;
   setElementValueById('saving-amount', savingAmount);
   setElementValueById('remaining-balance', remainingBalance);
 
