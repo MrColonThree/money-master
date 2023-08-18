@@ -1,51 +1,55 @@
+function calculateExpenses() {
+  const income = getInputValueById("income");
+  const food = getInputValueById("food");
+  const rent = getInputValueById("rent");
+  const clothes = getInputValueById("clothes");
+  
+  // Validation
+  if(isNaN(income) || isNaN(rent) || isNaN(food) || isNaN(clothes)){
+    alert('Please insert number!');
+    return;
+  }
 
-let totalExpenses = 0;
-let balanceTotal = 0;
-
-function calculateExpenses(){
-  const income = getInputValueById('income');
-  const food = getInputValueById('food');
-  const rent = getInputValueById('rent');
-  const clothes = getInputValueById('clothes');
   const totalExpenses = food + rent + clothes;
   const balanceTotal = income - totalExpenses;
-
-  setElementValueById('expenses', totalExpenses);
-  setElementValueById('balance', balanceTotal);
+  setElementValueById("expenses", totalExpenses);
+  setElementValueById("balance", balanceTotal);
 }
 
-function calculateDiscount(){
-  const discount = getInputValueById('discount');
-  const income = getInputValueById('income');
-  const food = getInputValueById('food');
-  const rent = getInputValueById('rent');
-  const clothes = getInputValueById('clothes');
+function calculateDiscount() {
+  const income = getInputValueById("income");
+  const food = getInputValueById("food");
+  const rent = getInputValueById("rent");
+  const clothes = getInputValueById("clothes");
+  
+  // Validation
+  if(isNaN(income) || isNaN(rent) || isNaN(food) || isNaN(clothes)){
+    alert('Please insert number!');
+    return;
+  }
+
   const totalExpenses = food + rent + clothes;
-  const savingAmount = (totalExpenses * (discount / 100));
+  const discount = getInputValueById("discount");
+  const savingAmount = totalExpenses * (discount / 100);
   const balanceTotal = income - totalExpenses;
   const remainingBalance = balanceTotal + savingAmount;
-  setElementValueById('saving-amount', savingAmount);
-  setElementValueById('remaining-balance', remainingBalance);
-
+  setElementValueById("saving-amount", savingAmount);
+  setElementValueById("remaining-balance", remainingBalance);
 }
 
-
-function getInputValueById(inputId){
- const inputField = document.getElementById(inputId);
- const inputFieldText = inputField.value;
- const inputValue = parseFloat(inputFieldText);
- if (isNaN(inputValue)) {
-  alert('Please insert number!')
-  inputField.value = '';
-  p.innerText = '';
+// reusable get input value field in number
+function getInputValueById(fieldId) {
+  const inputField = document.getElementById(fieldId);
+  const inputValueText = inputField.value;
+  const value = parseFloat(inputValueText);
+  // if (isNaN(value)) {
+  //   alert('Please insert a valid number'); 
+  //   return value;
+  // }
+  return value;
 }
 
-return inputValue;
+function setElementValueById(elementId, value) {
+  const element = document.getElementById(elementId);
+  element.innerText = value.toFixed(2);
 }
-
-function setElementValueById(idName, result){
-  const p = document.getElementById(idName);
-  p.innerText = result.toFixed(2);
-  
-}
-
