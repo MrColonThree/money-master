@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .montserrot {
+        font-family: "Montserrat", sans-serif;
+      }
+      .roboto {
+        font-family: "Roboto", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mx-auto my-10">
+      <h1 class="text-5xl text-center font-bold montsererot text-[#31A5AC]">
+        Money Master💰
+      </h1>
+    </header>
+    <main class="roboto">
+      <section class="w-full md:w-3/4 mx-auto flex gap-20">
+        <div class="hidden lg:flex">
+          <img class="" src="bg.png" alt="" />
+        </div>
+        <div class="px-12 py-8 bg-yellow-50">
+          <h1 class="text-center text-3xl font-semibold">Income</h1>
+          <div class="flex items-center justify-center">
+            <div class="flex justify-end gap-4 items-center text-2xl mx-auto">
+              <p> Income:</p>
+              <input class="px-2 py-1 bg-gray-200 my-5" type="text" name="" id="income" />
+            </div>
+          </div>
+          <h1 class="text-center text-3xl font-semibold mb-5">Expenses</h1>
+          <div class="flex flex-col items-center">
+            <div class="flex justify-end gap-4 items-center text-2xl">
+              <p>Food:</p>
+              <input class="px-2 py-1 bg-gray-200" type="text" name="" id="food" />
+            </div>
+            <div class="flex justify-end gap-4 items-center text-2xl my-4">
+              <p>Rent:</p>
+              <input class="px-2 py-1 bg-gray-200" type="text" name="" id="rent" />
+            </div>
+            <div class="flex justify-end gap-4 items-center text-2xl">
+              <p>Clothes:</p>
+              <input class="px-2 py-1 bg-gray-200" type="text" name="" id="clothes" />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <button onclick="calculateExpenses()" class="mx-auto text-2xl text-white bg-sky-500 px-16 py-3 rounded-lg font-semibold mt-7">Calculate</button>
+          </div>
+          <h1 class="text-center text-2xl font-semibold my-5">Total Expenses: <span id="expenses">0</span></h1>
+          <h1 class="text-center text-2xl font-semibold">Balance: <span id="balance">0</span></h1>
+          <div class="flex justify-end gap-4  items-center text-2xl my-7">
+            <p>Save:</p>
+            <input id="discount" class="px-2 py-3 bg-gray-200 w-1/2" type="text">
+            <p>%</p>
+            <button onclick="calculateDiscount()" class="mx-auto text-2xl text-white bg-sky-500 px-12 py-3 rounded-lg font-semibold">Save</button>
+          </div>
+          <h1  class="text-center text-2xl font-semibold">Saving Amount: <span id="saving-amount">0</span></h1>
+          <h1  class="text-center text-2xl font-semibold mt-4">Remaining Balance: <span id="remaining-balance">0</span></h1>
+        </div>
+      </section>
+    </main>
+    <script src="js/scripts.js"></script>  </body>
+</html>
